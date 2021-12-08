@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
 import Visualization from "./components/Visualization";
 function App() {
+
   return (
     <div className="App">
       <div className="nav">
@@ -15,7 +16,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/visualization" element={<Visualization />}/>
       </Routes>
-      <p>hoi</p>
     </div>
   );
 }
