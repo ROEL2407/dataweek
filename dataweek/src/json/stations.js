@@ -1,4 +1,4 @@
-[
+export const stationData = [
   {
     "id": 266,
     "code": "HT",
