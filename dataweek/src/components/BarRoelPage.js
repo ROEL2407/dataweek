@@ -42,7 +42,7 @@ function BarRoelPage () {
     console.log(routeRoel);
   return (
     <>
-      <BarChartRoel data={stationData} />
+      <BarChartRoel data={routeRoel} />
     </>
   );
 }
