@@ -1,6 +1,6 @@
-import BarChart1Roel from "../charts/BarChart1Roel";
-import BarChart2Roel from "../charts/BarChart2Roel";
-import BarChart3Roel from "../charts/BarChart3Roel";
+import BarChart1Roel from "../charts/roel/BarChart1Roel";
+import BarChart2Roel from "../charts/roel/BarChart2Roel";
+import BarChart3Roel from "../charts/roel/BarChart3Roel";
 import { stationData } from "../json/stations";
 import { mondkapData } from  "../json/mondkapjes";
 

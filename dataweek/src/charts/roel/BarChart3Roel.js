@@ -2,7 +2,7 @@ import useD3 from "../hooks/useD3";
 import React from "react";
 import * as d3 from "d3";
 
-function BarChartRoel({ data }) {
+function BarChart2Roel({ data }) {
 
   const ref = useD3(
     (svg) => {
@@ -12,9 +12,9 @@ function BarChartRoel({ data }) {
 
       const g = svg.append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`)
-      .attr("id", "neus_diagram");
+      .attr("id", "kin_diagram");
         
-      const xscale = d3.scaleLinear().domain(0, 1).range([0, width]);
+      const xscale = d3.scaleLinear().domain(0, 5).range([0, width]);
       const yscale = d3.scaleBand().rangeRound([0, height]).paddingInner(0.1);
 
       // Axis setup
@@ -33,13 +33,13 @@ function BarChartRoel({ data }) {
       function update(new_data) {
           console.log(new_data);
           //update the scales
-          xscale.domain([0, d3.max(new_data, (d) => d.mondkapjes.waar.neus)]);
+          xscale.domain([0, 15]);
           yscale.domain(new_data.map((d) => d.Naam));
           //render the axis
           g_xaxis.transition().call(xaxis);
           g_yaxis.transition().call(yaxis);
 
-          const rect = g.selectAll("rect").data(new_data, (d) => d.mondkapjes.waar.neus).join(
+          const rect = g.selectAll("rect").data(new_data, (d) => d.mondkapjes.waar.kin).join(
                   // ENTER 
                   // new elements
                   (enter) => {
@@ -59,9 +59,9 @@ function BarChartRoel({ data }) {
           // both old and new elements
           rect.transition()
               .attr("height", yscale.bandwidth())
-              .attr("width", (d) => xscale(d.mondkapjes.waar.neus))
+              .attr("width", (d) => xscale(d.mondkapjes.waar.kin))
               .attr("y", (d) => yscale(d.Naam))
-              .attr("className", (d) => d.mondkapjes.waar.neus)
+              .attr("className", (d) => d.mondkapjes.waar.kin)
               .style('fill',  function(d){return myColor(d)})
               
       }
@@ -71,7 +71,7 @@ function BarChartRoel({ data }) {
 
   return (
       <>
-      <h2>het aantal mensen die de mondkap goed dragen</h2>
+      <h2>het aantal mensen die de mondkap niet of onder hun kin dragen</h2>
     <svg
       ref={ref}
       style={{
@@ -90,4 +90,4 @@ function BarChartRoel({ data }) {
   );
 }
 
-export default BarChartRoel;
+export default BarChart2Roel;
