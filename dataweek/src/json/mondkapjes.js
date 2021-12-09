@@ -2,7 +2,7 @@ export const mondkapData = [
     {
         "treinroute": "treinRoel",
         "mondkapjes":{
-            "hei-cas": {
+            "hei_cas": {
                 "waar": {
                     "goed": 9,
                     "neus": 1,
@@ -19,7 +19,7 @@ export const mondkapData = [
                     "wegwerp": 7
                 }
             },
-            "cas-zaa": {
+            "cas_zaa": {
                 "waar": {
                     "goed": 9,
                     "neus": 1,
@@ -36,7 +36,7 @@ export const mondkapData = [
                     "wegwerp": 6
                 }
             },
-            "zaa-slo": {
+            "zaa_slo": {
                 "waar": {
                     "goed": 9,
                     "neus": 1,
@@ -53,7 +53,7 @@ export const mondkapData = [
                     "wegwerp": 8
                 }
             },
-            "slo-ams": {
+            "slo_ams": {
                 "waar": {
                     "goed": 11,
                     "neus": 1,
@@ -75,7 +75,7 @@ export const mondkapData = [
     {
         "treinroute": "treinStijn",
         "mondkapjes":{
-            "alm-dev": {
+            "alm_dev": {
                 "waar": {
                     "goed": 7,
                     "neus": 1,
@@ -92,7 +92,7 @@ export const mondkapData = [
                     "wegwerp": 7
                 }
             },
-            "dev-apl": {
+            "dev_apl": {
                 "waar": {
                     "goed": 19,
                     "neus": 4,
@@ -109,7 +109,7 @@ export const mondkapData = [
                     "wegwerp": 20
                 }
             },
-            "apl-amf": {
+            "apl_amf": {
                 "waar": {
                     "goed": 16,
                     "neus": 4,
@@ -126,7 +126,7 @@ export const mondkapData = [
                     "wegwerp": 15
                 }
             },
-            "amf-hil": {
+            "amf_hil": {
                 "waar": {
                     "goed": 10,
                     "neus": 1,
@@ -143,7 +143,7 @@ export const mondkapData = [
                     "wegwerp": 8
                 }
             },
-            "hil-ams": {
+            "hil_ams": {
                 "waar": {
                     "goed": 15,
                     "neus": 3,
@@ -165,7 +165,7 @@ export const mondkapData = [
     {
         "treinroute": "treinAmanda",
         "mondkapjes":{
-            "hoo-sch": {
+            "hoo_sch": {
                 "waar": {
                     "goed": 3,
                     "neus": 2,
@@ -182,7 +182,7 @@ export const mondkapData = [
                     "wegwerp": 5
                 }
             },
-            "sch-zui": {
+            "sch_zui": {
                 "waar": {
                     "goed": 4,
                     "neus": 1,
