@@ -16,7 +16,7 @@ function BarAmandaPage () {
             case "Schiphol Airport":
             routeAmanda.push({
                 id: 1,
-                Naam: element.name_long + " - Ams Centraal"
+                Naam: element.name_long + " - Ams Zuid"
             })
             break;
         

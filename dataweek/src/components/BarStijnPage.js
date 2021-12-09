@@ -31,6 +31,13 @@ function BarStijnPage () {
             case "Amersfoort Centraal":
                 routeStijn.push({
                 id: 3,
+                Naam: element.name_long + " - Hilversum"
+            })
+            break;
+
+            case "Hilversum":
+                routeStijn.push({
+                id: 3,
                 Naam: element.name_long + " - Ams Centraal"
             })
             break;
