@@ -1,4 +1,4 @@
-import useD3 from "../hooks/useD3";
+import useD3 from "../../hooks/useD3";
 import React from "react";
 import * as d3 from "d3";
 
@@ -12,9 +12,9 @@ function BarChartAmanda({ data }) {
 
       const g = svg.append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`)
-      .attr("id", "diagram");
-
-      const xscale = d3.scaleLinear().domain([d3.min(data), d3.max(data)]).range([0, width]);
+      .attr("id", "goed_diagram");
+        
+      const xscale = d3.scaleLinear().domain(0, 1).range([0, width]);
       const yscale = d3.scaleBand().rangeRound([0, height]).paddingInner(0.1);
 
       // Axis setup
@@ -23,23 +23,23 @@ function BarChartAmanda({ data }) {
       const yaxis = d3.axisLeft().scale(yscale);
       const g_yaxis = g.append("g").attr("className", "y axis");
 
-      //color scale items of types
-      let grass = d3.scaleLinear().domain([1, 3]).range(["lightgreen", "darkgreen"]);
-      let fire = d3.scaleLinear().domain([1, 3]).range(["red", "darkred"]);
-      let water = d3.scaleLinear().domain([1, 3]).range(["lightblue", "darkblue"]);
+      //color scale items of wearing
+      let myColor = d3.scaleOrdinal().domain(data)
+      .range(["#e8ba31"])
       ///////////////////////
       update(data);
       console.log(data);
 
       function update(new_data) {
+          console.log(new_data);
           //update the scales
-          xscale.domain([300, d3.max(new_data, (d) => d.totaal)]);
+          xscale.domain([0, 10]);
           yscale.domain(new_data.map((d) => d.Naam));
           //render the axis
           g_xaxis.transition().call(xaxis);
           g_yaxis.transition().call(yaxis);
 
-          const rect = g.selectAll("rect").data(new_data, (d) => d.totaal).join(
+          const rect = g.selectAll("rect").data(new_data, (d) => d.mondkapjes.waar.goed).join(
                   // ENTER 
                   // new elements
                   (enter) => {
@@ -54,51 +54,24 @@ function BarChartAmanda({ data }) {
                   // elements that aren't associated with data
                   (exit) => exit.remove()
               )
-              .on('mouseover', onMouseOver)
-              .on('mousemove', onMouseOver) // Mousemove returnt constant de coördinaten van de muis
-              .on('mouseout', onMouseOut);
 
           // ENTER + UPDATE
           // both old and new elements
           rect.transition()
               .attr("height", yscale.bandwidth())
-              .attr("width", (d) => xscale(d.totaal))
-              .attr("y", (d) => yscale(d.naam))
-              .attr("className", (d) => d.type)
-              .style('fill', (d) => {
-                  return d.type === 'grass' ? grass(d.evo) : d.type === 'fire' ? fire(d.evo) : water(d.evo)
-              })
+              .attr("width", (d) => xscale(d.mondkapjes.waar.goed))
+              .attr("y", (d) => yscale(d.Naam))
+              .attr("className", (d) => d.mondkapjes.waar.goed)
+              .style('fill',  function(d){return myColor(d)})
               
-      }
-
-      
-
-      function onMouseOver(d, data) {
-          // Gives the position of the mouse
-          const xPos = d.clientX;
-          const yPos = d.clientY;
-
-          // give tooltip display block if mouse is over a bar
-          d3.select(this).attr('className', 'block');
-          d3.select('#toolTip').classed('hidden', false);
-          d3.select('#toolTip')
-              // take position of mouse for position of tooltip
-              .style('left', xPos + 'px')
-              .style('top', yPos + 'px');
-          //give data to tooltip
-          d3.select('#type').text(`Type: ${data.type}`);
-          d3.select('#value').text(`Total base stats: ${data.totaal}`);
-      }
-
-      function onMouseOut() {
-          // remove display of tooltip when mouse isn't over a bar
-          d3.select('#toolTip').classed('hidden', true);
       }
     },
     [data.length]
   );
 
   return (
+      <>
+      <h2>het aantal mensen die de mondkap goed dragen</h2>
     <svg
       ref={ref}
       style={{
@@ -113,6 +86,7 @@ function BarChartAmanda({ data }) {
       <g className="x-axis" />
       <g className="y-axis" />
     </svg>
+    </>
   );
 }
 
