@@ -2,7 +2,7 @@ import useD3 from "../../hooks/useD3";
 import React from "react";
 import * as d3 from "d3";
 
-function BarChart2Roel({ data }) {
+function BarChart3Roel({ data }) {
 
   const ref = useD3(
     (svg) => {
@@ -90,4 +90,4 @@ function BarChart2Roel({ data }) {
   );
 }
 
-export default BarChart2Roel;
+export default BarChart3Roel;
