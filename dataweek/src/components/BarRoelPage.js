@@ -1,4 +1,6 @@
-import BarChartRoel from "../charts/BarChartRoel";
+import BarChart1Roel from "../charts/BarChart1Roel";
+import BarChart2Roel from "../charts/BarChart2Roel";
+import BarChart3Roel from "../charts/BarChart3Roel";
 import { stationData } from "../json/stations";
 import { mondkapData } from  "../json/mondkapjes";
 
@@ -52,7 +54,9 @@ function BarRoelPage () {
     console.log(routeRoel)
   return (
     <>
-      <BarChartRoel data={routeRoel} />
+    <BarChart1Roel data={routeRoel} />
+      <BarChart2Roel data={routeRoel} />
+      <BarChart3Roel data={routeRoel} />
     </>
   );
 }
