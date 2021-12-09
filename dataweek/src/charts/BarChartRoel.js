@@ -8,7 +8,7 @@ function BarChartRoel({ data }) {
     (svg) => {
       const height = 400;
       const width = 600;
-      const margin = {top: 40, bottom: 10, left: 120, right: 20 };
+      const margin = {top: 40, bottom: 10, left: 200, right: 20 };
 
       const g = svg.append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`)
