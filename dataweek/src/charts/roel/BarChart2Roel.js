@@ -71,7 +71,7 @@ function BarChart2Roel({ data }) {
 
   return (
       <>
-      <h2>het aantal mensen die de mondkap onder hun neus dragen</h2>
+      <h2>Het aantal mensen die de mondkap onder hun neus dragen</h2>
     <svg
       ref={ref}
       style={{

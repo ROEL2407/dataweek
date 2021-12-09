@@ -71,7 +71,7 @@ function BarChart1Roel({ data }) {
 
   return (
       <>
-      <h2>het aantal mensen die de mondkap goed dragen</h2>
+      <h2>Het aantal mensen die de mondkap goed dragen</h2>
     <svg
       ref={ref}
       style={{
